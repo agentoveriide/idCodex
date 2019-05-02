@@ -1,22 +1,26 @@
-import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
-import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
-
-import { environment } from '../environments/environment';
-
-import { AngularFireModule } from '@angular/fire';
-import { AngularFirestoreModule } from '@angular/fire/firestore';
+import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FlexLayoutModule } from '@angular/flex-layout';
-import { NgxAuthFirebaseUIModule } from 'ngx-auth-firebaseui';
-import { OverlayContainer } from '@angular/cdk/overlay';
-import { SidenavModule } from './modules/sidenav/sidenav.module';
+
+// Font Awesome
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { fas } from '@fortawesome/free-solid-svg-icons';
 import { far } from '@fortawesome/free-regular-svg-icons';
+
+// Angular Firebase
+import { AngularFireModule } from '@angular/fire';
+import { AngularFirestoreModule } from '@angular/fire/firestore';
+import { NgxAuthFirebaseUIModule } from 'ngx-auth-firebaseui';
+
+// App Module Modules & Components 
+import { AppRoutingModule } from './app-routing.module';
+import { SidenavModule } from './modules/sidenav/sidenav.module';
+import { AppComponent } from './app.component';
+
+// Environment Config
+import { environment } from '../environments/environment';
 
 @NgModule({
   declarations: [
@@ -37,8 +41,7 @@ import { far } from '@fortawesome/free-regular-svg-icons';
   bootstrap: [AppComponent]
 })
 export class AppModule {
-  constructor(OverlayContainer: OverlayContainer) {
-    OverlayContainer.getContainerElement().classList.add('idcodex-app-theme');
+  constructor() {
     library.add(fas, far);
   }
   

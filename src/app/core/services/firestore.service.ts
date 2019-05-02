@@ -40,8 +40,4 @@ export class FirestoreService {
       `profiles/${profileId}/addresses/${addressId}`
     );
   }
-
-  createProfile(profileId: string, data) {
-    this.afb.upsert(profileId, data);
-  }
 }
